@@ -124,7 +124,7 @@ public:
 	}
 
 	void onSendClicked() {
-		auto text = ui->input->toPlainText();
+		auto text = ui->input->text();
 		if (!text.isEmpty()) {
           auto crc = CRC::doCrc(text.toStdString(), 2, "101111");
           setResult(&crc);
