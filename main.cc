@@ -106,10 +106,14 @@ public:
 	void setResult(CRC *crc) {
 		if (crc == nullptr) {
 			ui->input->clear();
+			ui->input->repaint();
 			ui->out->clear();
+			ui->out->repaint();
 			ui->status->clear();
+			ui->status->repaint();
 		} else {
           ui->out->setText(QString::fromStdString(crc->source));
+					ui->out->repaint();
 
           QString value;
 	        int index = 1; 
@@ -120,6 +124,7 @@ public:
           }
 
           ui->status->setHtml(value);
+					ui->status->repaint();
 		}
 	}
 
